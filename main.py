@@ -1,3 +1,5 @@
+# dont skid
+
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from requests_futures.sessions import FuturesSession
 import queue, os, random, concurrent.futures
