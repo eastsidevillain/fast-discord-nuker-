@@ -1,3 +1,5 @@
+Fastest discord nuker
 
-uses queues, sessions and threadpool
+using queues, sessions and threadpool
+
 quick asf
