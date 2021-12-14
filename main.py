@@ -37,6 +37,3 @@ if __name__ == "__main__":
     with ThreadPoolExecutor(max_workers=110) as executor:
         for m in members:
             threads.append(executor.submit(mass_ban, m))
-
-        for tasks in concurrent.futures.as_completed(threads):
-            print(f"Tasks Completed:", tasks.result())
