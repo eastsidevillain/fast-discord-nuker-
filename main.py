@@ -33,4 +33,6 @@ if __name__ == "__main__":
         for m in members:
 
             threads.append(executor.submit(mass_ban, m))
+            
+            
             print(f"Succesfully Banned; " + m)
