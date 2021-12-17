@@ -1,5 +1,6 @@
-Fastest discord nuker
+Fast discord nuker / mass ban
 
-using queues, sessions and threadpool
+sessions and threadpool
 
-quick asf
+quick asf u can make it quicker n shi
+
