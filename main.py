@@ -4,7 +4,7 @@ from colorama import Style, Fore
 import os, httplib2
 
 
-os.system(" cls & mode 80, 23 & title PHOBOS! ")
+os.system("cls & mode 80, 23 & title PHOBOS!")
 
 
 with open("members.txt") as f:
@@ -13,9 +13,9 @@ with open("members.txt") as f:
 
 def mass_ban_users(members):
     try:
-        h = httplib2.Http(".cache")
+        h = httplib2.Http()
         h.request(
-            f"https://discord.com/api/v9/guilds/{guild}/bans/{members}",
+            "https://discord.com/api/v9/guilds/{}/bans/{}".format(guild, members),
             method="PUT",
             headers={"Authorization": f"Bot {token}"},
         ),
