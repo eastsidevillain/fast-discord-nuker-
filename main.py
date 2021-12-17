@@ -10,11 +10,11 @@ members = open("members.txt")
 os.system("cls & mode 80, 23")
 
 
-
 def mass_ban(members):
     try:
         session = FuturesSession()
-        (session.put(
+        (
+            session.put(
                 "https://discord.com/api/v{}/guilds/{}/bans/{}".format(
                     random.randint(6, 9), guild, members
                 ),
@@ -33,9 +33,4 @@ if __name__ == "__main__":
         for m in members:
 
             threads.append(executor.submit(mass_ban, m))
-        try:
-            print(f'Succesfully Banned; ' + m)
-
-        except:
-
-            print(f'Unable To Ban;' + m + '[RATELIMITED]')
+            print(f"Succesfully Banned; " + m)
