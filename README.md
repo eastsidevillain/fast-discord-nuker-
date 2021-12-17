@@ -1,6 +1,6 @@
 Fast discord nuker / mass ban
 
-sessions and threadpool
+httplib2 and threadpool
 
 quick asf u can make it quicker n shi
 
