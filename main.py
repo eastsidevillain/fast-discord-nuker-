@@ -4,7 +4,7 @@ from colorama import Style, Fore
 import os, httplib2
 
 
-os.system("cls & mode 80, 23 & title PHOBOS!")
+os.system(" cls & mode 80, 23 & title PHOBOS! ")
 
 
 with open("members.txt") as f:
