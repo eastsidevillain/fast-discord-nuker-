@@ -36,7 +36,7 @@ if __name__ == "__main__":
     
     threads = []
     
-    with ThreadPoolExecutor(max_workers=110) as executor
+    with ThreadPoolExecutor(max_workers=110) as executor:
     
         for m in members:
             
