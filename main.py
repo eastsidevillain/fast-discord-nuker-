@@ -1,43 +1,38 @@
 from concurrent.futures import ThreadPoolExecutor
 from requests_futures.sessions import FuturesSession
-import os, random, time
 from colorama import Style, Fore
+import os, httplib2
 
 
-c = Fore.RESET
 os.system("cls & mode 80, 23 & title PHOBOS!")
-token, guild = input("TOKEN ; "), input("GUILD ; ")
+
 
 with open("members.txt") as f:
     members = f.readlines()
 
 
-def mass_ban(members):
+def mass_ban_users(members):
     try:
-        session = FuturesSession()
-        (
-            session.put(
-                "https://discord.com/api/v{}/guilds/{}/bans/{}".format(
-                    random.randint(6, 9), guild, members
-                ),
-                headers={"Authorization": f"Bot {token}"},
-                json={"reason": "FUCKDATBITCH"},
-            ),
-        )
+        h = httplib2.Http(".cache")
+        h.request(
+            f"https://discord.com/api/v9/guilds/{guild}/bans/{members}",
+            method="PUT",
+            headers={"Authorization": f"Bot {token}"},
+        ),
     except:
         return
 
 
 if __name__ == "__main__":
+    token, guild = input("TOKEN ; "), input("GUILD ; ")
     threads = []
-
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor() as executor:
 
         for m in members:
 
-            threads.append(executor.submit(mass_ban, m))
+            threads.append(executor.submit(mass_ban_users, m))
 
             print(
-                f"{Fore.CYAN}{Style.BRIGHT}{Style.DIM} Succesfully Punished User -> ; {c}  "
+                f"{Fore.CYAN}{Style.BRIGHT}{Style.DIM} Succesfully Punished User -> ; {Fore.RESET}  "
                 + m
             )
