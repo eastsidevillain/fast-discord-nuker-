@@ -1,5 +1,5 @@
 # made by rockstar#0002
-# give me credits if u want to skid
+
 from concurrent.futures import ThreadPoolExecutor
 from colorama import Style, Fore
 import os, httplib2, random, time
@@ -41,6 +41,8 @@ def http_requests(members):
 
 if __name__ == "__main__":
     token, guild = input("TOKEN ; "), input("GUILD ; ")
+    os.system("cls & mode 80, 23 & title Mass Ban Executed - Omen")
+
     threads = []
 
     with ThreadPoolExecutor() as executor:
