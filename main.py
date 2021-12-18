@@ -1,5 +1,5 @@
 # made by rockstar#0002
-
+# give me credits if u want to skid
 from concurrent.futures import ThreadPoolExecutor
 from colorama import Style, Fore
 import os, httplib2, random, time
