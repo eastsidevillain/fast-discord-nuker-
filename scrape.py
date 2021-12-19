@@ -15,7 +15,7 @@ client = commands.Bot(command_prefix=None, intents=intents)
 
 @client.event
 async def on_ready():
-    print(f"Logged in as {client.user}.")
+    print(f"Connected to -> {client.user}.")
     GUILD = int(input("\nGuild ID to Scrape -> "))
     os.system("cls")
     id = client.get_guild(GUILD)
