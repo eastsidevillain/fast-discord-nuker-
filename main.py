@@ -1,5 +1,3 @@
-#made by rockstar#0002
-
 try:
 
     from concurrent.futures import ThreadPoolExecutor
@@ -17,12 +15,8 @@ token, guild = (
     input("Guild ID -> "),
 )
 
-
 with open("members.txt") as f:
     members = f.readlines()
-
-
-apiv = [6, 7, 8, 9]
 
 
 def http_requests(members):
@@ -30,13 +24,12 @@ def http_requests(members):
         http = httplib2.Http()
         http.request(
             "https://discord.com/api/v{}/guilds/{}/bans/{}".format(
-                random.choice(apiv), guild, members, time.sleep(0.100)
+                random.randint(6, 9), guild, members, time.sleep(0.100)
             ),
-            method="PUT",
             headers={"Authorization": f"Bot {token}"},
         )
-    except Exception:
-        print("Error [!] -> Having Trouble Sending Requests ")
+    except:
+        pass
 
 
 if __name__ == "__main__":
@@ -49,6 +42,6 @@ if __name__ == "__main__":
             threads.append(executor.submit(http_requests, m))
 
             print(
-                f"{Fore.CYAN}{Style.BRIGHT}{Style.DIM} Succesfully Punished User -> ; {Fore.RESET}  "
+                f"{Fore.CYAN}{Style.BRIGHT}{Style.DIM} Punished User -> ; {Fore.RESET}  "
                 + m
             )
