@@ -18,11 +18,14 @@ token, guild = (
 with open("members.txt") as f:
     members = f.readlines()
 
- 
-def http_requests(members):        #changed request method to HTTPX Since Status Codes Dont work with HTTPLIB2 For some shitter reason :rofl:
+
+apivs = [6, 7, 8, 9]
+
+
+def http_requests(members):
     response = httpx.put(
         "https://discord.com/api/v{}/guilds/{}/bans/{}".format(
-            random.randint(6, 9), guild, members, time.sleep(0.100)
+            random.choice(apivs), guild, members, time.sleep(0.100)
         ),
         headers={"Authorization": f"Bot {token}"},
     )
