@@ -2,9 +2,6 @@ import discord, os
 from discord.ext import commands
 
 os.system("cls & mode 80, 23")
-f = open("members.txt", "w")
-f.close()
-
 
 TOKEN = input(f"BOT TOKEN -> ")
 os.system("cls & mode 80, 23")
