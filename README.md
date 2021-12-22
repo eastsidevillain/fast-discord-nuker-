@@ -1,4 +1,4 @@
-omen dicord nuker, 80 Bans per second
+omen dicord nuker
 
 Fast discord nuker / mass ban
 
