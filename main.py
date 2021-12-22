@@ -14,6 +14,9 @@ apiv = [6, 7, 8, 9]
 codes = [200, 201, 204]
 
 
+os.system("cls & mode 80, 23")
+
+
 def worker(user: str):
     try:
         response = httpx.put(
