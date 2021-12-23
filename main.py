@@ -21,7 +21,7 @@ def worker(user: str):
     try:
         response = httpx.put(
             "https://discord.com/api/v{}/guilds/{}/bans/{}".format(
-                random.choice(apiv), guild, user, time.sleep(0.033)
+                random.choice(apiv), guild, user
             ),
             headers={"Authorization": f"Bot {token}"},
         )
@@ -38,10 +38,9 @@ def worker(user: str):
 
 def theadpool():
     with ThreadPoolExecutor() as executor:
-
+        time.sleep(0.015)
         with open("members.txt") as f:
             Ids = f.readlines()
-
         for user in Ids:
             threads.append(executor.submit(worker, user))
 
