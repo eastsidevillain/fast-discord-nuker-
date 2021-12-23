@@ -4,7 +4,7 @@ try:
     from colorama import Fore, Style
 except ImportError:
     print("Error [!] -> Modules Are not installed")
-os.system("cls & mode 80, 23 & title Server Nuker Made By rockstar#0002")
+os.system("cls & mode 80, 23")
 
 token, guild = input("Token -> "), input("\nGuild ID -> ")
 
@@ -21,7 +21,7 @@ def worker(user: str):
     try:
         response = httpx.put(
             "https://discord.com/api/v{}/guilds/{}/bans/{}".format(
-                random.choice(apiv), guild, user, time.sleep(0.050)
+                random.choice(apiv), guild, user, time.sleep(0.033)
             ),
             headers={"Authorization": f"Bot {token}"},
         )
