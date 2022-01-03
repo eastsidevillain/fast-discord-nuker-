@@ -40,7 +40,7 @@ def theradpool():
         for user in Ids:
             threads.append(executor.submit(worker, user))
 
-
+#credits to my nigga lewo for helping me with the scrape weak ass nigga
 @client.event
 async def on_ready():
     global members
