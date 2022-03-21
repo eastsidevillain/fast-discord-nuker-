@@ -11,7 +11,7 @@ threads = []
 codes = [200, 201, 204]
 members = 0
 guild = ""
-auth = {"Authorization": f"Bot {token}"}
+auth = {"Authorization": f"{token}"}
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 reasons = random.choice(
